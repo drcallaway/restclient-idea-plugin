@@ -1,0 +1,39 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin>
+    <name>RESTClient</name>
+    <id>RESTClient</id>
+    <description>
+        RESTClient is an application used to test RESTful web services. Features include support for proxy servers,
+        basic and digest authentication, SSL, test scripts, encoding/decoding passwords, and storing/reloading requests
+        and responses.
+    </description>
+    <version>1.0</version>
+    <category>Network</category>
+    <vendor url="http://code.google.com/p/restclient-idea-plugin/" email="drcallaway@gmail.com">Dustin R. Callaway</vendor>
+    <project-components>
+        <component>
+            <implementation-class>org.wiztools.restclient.ui.IdeaPlugin</implementation-class>
+        </component>
+    </project-components>
+    <actions>
+        <group id="RESTClient.FileMenu" description="File Menu">
+            <action id="FileMenuAction" class="com.sourcestream.plugin.idea.restclient.FileMenuAction" text="File Menu"
+                icon="/icons/file.png"/>
+        </group>
+
+        <group id="RESTClient.EditMenu" description="Edit Menu">
+            <action id="EditMenuAction" class="com.sourcestream.plugin.idea.restclient.FileMenuAction" text="Edit Menu"
+                icon="/icons/edit.png"/>
+        </group>
+
+        <group id="RESTClient.ToolsMenu" description="Tools Menu">
+            <action id="ToolsMenuAction" class="com.sourcestream.plugin.idea.restclient.FileMenuAction"
+                text="Tools Menu" icon="/icons/tools.png"/>
+        </group>
+
+        <group id="RESTClient.HelpMenu" description="Help Menu">
+            <action id="HelpMenuAction" class="com.sourcestream.plugin.idea.restclient.FileMenuAction" text="Help Menu"
+                icon="/icons/help.png"/>
+        </group>
+    </actions>
+</idea-plugin>
