@@ -13,15 +13,27 @@ public class ReflectionUtil
      *
      * @param obj Object on which to invoke a method
      * @param methodName Method to invoke
+     * @param args Method arguments
      */
-    public static void invokeMethod(Object obj, String methodName)
+    public static void invokeMethod(Object obj, String methodName, Object... args)
     {
         try
         {
-            Method m = obj.getClass().getDeclaredMethod(methodName);
+            Class[] arglist = null;
+            if (args != null)
+            {
+                arglist = new Class[args.length];
+
+                for (int i = 0; i < arglist.length; i++)
+                {
+                    arglist[i] = args[i].getClass();
+                }
+            }
+
+            Method m = obj.getClass().getDeclaredMethod(methodName, arglist);
             AccessibleObject[] ao = {m};
             AccessibleObject.setAccessible(ao, true);
-            m.invoke(obj);
+            m.invoke(obj, args);
         }
         catch (Exception ex)
         {

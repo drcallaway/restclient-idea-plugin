@@ -42,6 +42,7 @@ public class FileMenuAction extends AnAction implements ActionListener
         popup.addSeparator();
 
         item = new JMenuItem("Save Request");
+        item.setActionCommand(IdeaPlugin.METHOD_SAVE_REQUEST);
         item.addActionListener(this);
         popup.add(item);
 
@@ -90,6 +91,10 @@ public class FileMenuAction extends AnAction implements ActionListener
         else if (event.getActionCommand().equals(IdeaPlugin.METHOD_OPEN_ARCHIVE))
         {
             plugin.openArchive();
+        }
+        else if (event.getActionCommand().equals(IdeaPlugin.METHOD_SAVE_REQUEST))
+        {
+            plugin.saveRequest();
         }
     }
 }
