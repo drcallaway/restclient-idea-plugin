@@ -18,7 +18,7 @@ public class FileMenuAction extends AnAction implements ActionListener
     private AnActionEvent ideaEvent;
 
     /**
-     * Construct a new FileMenuAction object.
+     * Constructs a new FileMenuAction object.
      */
     public FileMenuAction()
     {
