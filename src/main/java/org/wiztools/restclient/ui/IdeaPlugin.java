@@ -6,8 +6,6 @@ import com.sourcestream.plugin.idea.restclient.RESTClientPlugin;
 import com.sourcestream.plugin.idea.restclient.ReflectionUtil;
 
 import javax.swing.*;
-import java.lang.reflect.AccessibleObject;
-import java.lang.reflect.Method;
 
 /**
  * IDEA plugin for RESTClient.
@@ -18,7 +16,10 @@ public class IdeaPlugin extends RESTClientPlugin
     public static final String METHOD_OPEN_RESPONSE = "jmi_open_resAction";
     public static final String METHOD_OPEN_ARCHIVE = "jmi_open_archiveAction";
     public static final String METHOD_SAVE = "actionSave";
-    public static final String METHOD_SAVE_REQUEST = "save_request";
+    public static final String ACTION_SAVE_REQUEST = "save_request";
+    public static final String ACTION_SAVE_RESPONSE = "save_response";
+    public static final String ACTION_SAVE_RESPONSE_BODY = "save_response_body";
+    public static final String ACTION_SAVE_REQ_RES_ARCHIVE = "save_req_res_archive";
 
     private RESTMain restMain;
 
@@ -55,7 +56,7 @@ public class IdeaPlugin extends RESTClientPlugin
     }
 
     /**
-     * Open a save request.
+     * Opens a saved request.
      */
     public void openRequest()
     {
@@ -63,7 +64,7 @@ public class IdeaPlugin extends RESTClientPlugin
     }
 
     /**
-     * Open a saved response.
+     * Opens a saved response.
      */
     public void openResponse()
     {
@@ -71,7 +72,7 @@ public class IdeaPlugin extends RESTClientPlugin
     }
 
     /**
-     * Open a saved archive.
+     * Opens a saved archive.
      */
     public void openArchive()
     {
@@ -79,10 +80,34 @@ public class IdeaPlugin extends RESTClientPlugin
     }
 
     /**
-     * Save the request.
+     * Saves the request.
      */
     public void saveRequest()
     {
         ReflectionUtil.invokeMethod(restMain, IdeaPlugin.METHOD_SAVE, FileChooserType.SAVE_REQUEST);
+    }
+
+    /**
+     * Saves the response.
+     */
+    public void saveResponse()
+    {
+        ReflectionUtil.invokeMethod(restMain, IdeaPlugin.METHOD_SAVE, FileChooserType.SAVE_RESPONSE);
+    }
+
+    /**
+     * Saves the response body.
+     */
+    public void saveResponseBody()
+    {
+        ReflectionUtil.invokeMethod(restMain, IdeaPlugin.METHOD_SAVE, FileChooserType.SAVE_RESPONSE_BODY);
+    }
+
+    /**
+     * Saves the request/response archive.
+     */
+    public void saveReqResArchive()
+    {
+        ReflectionUtil.invokeMethod(restMain, IdeaPlugin.METHOD_SAVE, FileChooserType.SAVE_ARCHIVE);
     }
 }

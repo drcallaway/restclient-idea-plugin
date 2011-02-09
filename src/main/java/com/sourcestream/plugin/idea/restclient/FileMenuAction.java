@@ -42,19 +42,22 @@ public class FileMenuAction extends AnAction implements ActionListener
         popup.addSeparator();
 
         item = new JMenuItem("Save Request");
-        item.setActionCommand(IdeaPlugin.METHOD_SAVE_REQUEST);
+        item.setActionCommand(IdeaPlugin.ACTION_SAVE_REQUEST);
         item.addActionListener(this);
         popup.add(item);
 
         item = new JMenuItem("Save Response");
+        item.setActionCommand(IdeaPlugin.ACTION_SAVE_RESPONSE);
         item.addActionListener(this);
         popup.add(item);
 
         item = new JMenuItem("Save Response Body");
+        item.setActionCommand(IdeaPlugin.ACTION_SAVE_RESPONSE_BODY);
         item.addActionListener(this);
         popup.add(item);
 
         item = new JMenuItem("Save Req-Res Archive");
+        item.setActionCommand(IdeaPlugin.ACTION_SAVE_REQ_RES_ARCHIVE);
         item.addActionListener(this);
         popup.add(item);
     }
@@ -92,9 +95,21 @@ public class FileMenuAction extends AnAction implements ActionListener
         {
             plugin.openArchive();
         }
-        else if (event.getActionCommand().equals(IdeaPlugin.METHOD_SAVE_REQUEST))
+        else if (event.getActionCommand().equals(IdeaPlugin.ACTION_SAVE_REQUEST))
         {
             plugin.saveRequest();
+        }
+        else if (event.getActionCommand().equals(IdeaPlugin.ACTION_SAVE_RESPONSE))
+        {
+            plugin.saveResponse();
+        }
+        else if (event.getActionCommand().equals(IdeaPlugin.ACTION_SAVE_RESPONSE_BODY))
+        {
+            plugin.saveResponseBody();
+        }
+        else if (event.getActionCommand().equals(IdeaPlugin.ACTION_SAVE_REQ_RES_ARCHIVE))
+        {
+            plugin.saveReqResArchive();
         }
     }
 }
