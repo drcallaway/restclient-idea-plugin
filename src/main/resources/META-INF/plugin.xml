@@ -32,7 +32,7 @@
         </group>
 
         <group id="RESTClient.HelpMenu" description="Help Menu">
-            <action id="HelpMenuAction" class="com.sourcestream.plugin.idea.restclient.FileMenuAction" text="Help Menu"
+            <action id="HelpMenuAction" class="com.sourcestream.plugin.idea.restclient.HelpMenuAction" text="Help Menu"
                 icon="/icons/help.png"/>
         </group>
     </actions>

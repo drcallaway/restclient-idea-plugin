@@ -1,3 +1,26 @@
+/**
+ * The MIT License
+ *
+ * Copyright (c) 2011 by Dustin R. Callaway
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 package org.wiztools.restclient.ui;
 
 import com.intellij.openapi.project.Project;
@@ -23,6 +46,8 @@ public class IdeaPlugin extends RESTClientPlugin
     public static final String METHOD_OPEN_ARCHIVE = "jmi_open_archiveAction";
     public static final String METHOD_SAVE = "actionSave";
     public static final String METHOD_OPTIONS = "actionOpenOptionsDialog";
+    public static final String METHOD_ABOUT = "showAboutDialog";
+    public static final String METHOD_ABOUT_PLUGIN = "showAboutPluginDialog";
     public static final String ACTION_SAVE_REQUEST = "save_request";
     public static final String ACTION_SAVE_RESPONSE = "save_response";
     public static final String ACTION_SAVE_RESPONSE_BODY = "save_response_body";
@@ -37,6 +62,7 @@ public class IdeaPlugin extends RESTClientPlugin
 
     private RESTMain restMain;
     private PasswordGenDialog passwordGenDialog;
+    private AboutPluginDialog aboutPluginDialog;
 
     /**
      * Constructs a new plugin object.
@@ -237,5 +263,31 @@ public class IdeaPlugin extends RESTClientPlugin
     public void options(ActionEvent event)
     {
         ReflectionUtil.invokeMethod(restMain, IdeaPlugin.METHOD_OPTIONS, event);
+    }
+
+    /**
+     * Displays the about dialog.
+     */
+    public void showAboutDialog()
+    {
+        restMain.showAboutDialog();
+    }
+
+    /**
+     * Displays the about plugindialog.
+     */
+    public void showAboutPluginDialog()
+    {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run()
+            {
+                if (aboutPluginDialog == null)
+                {
+                    aboutPluginDialog = new AboutPluginDialog(restMain.getFrame());
+                }
+
+                aboutPluginDialog.setVisible(true);
+            }
+        });
     }
 }

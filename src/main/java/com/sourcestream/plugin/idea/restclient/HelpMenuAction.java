@@ -2,7 +2,7 @@
  * The MIT License
  *
  * Copyright (c) 2011 by Dustin R. Callaway
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -23,38 +23,60 @@
  */
 package com.sourcestream.plugin.idea.restclient;
 
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKeys;
 import org.wiztools.restclient.ui.IdeaPlugin;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
- * Base menu class.
+ * Handles the tools menu action by displaying a popup menu of edit choices and processing the user's selection.
  */
-public abstract class BaseMenuAction extends AnAction implements ActionListener
+public class HelpMenuAction extends BaseMenuAction
 {
-    protected JPopupMenu popup;
-    protected AnActionEvent ideaEvent;
-
     /**
-     * Invoked when the user clicks on the menu icon. Displays a popup menu of choices.
-     *
-     * @param event IDEA action event
+     * Constructs a new ToolsMenuAction object.
      */
-    public void actionPerformed(AnActionEvent event)
+    public HelpMenuAction()
     {
-        ideaEvent = event;
-        IdeaPlugin restPlugin = IdeaPlugin.getInstance(event.getData(DataKeys.PROJECT));
-        popup.show(restPlugin.getPluginPanel(), 31, getVerticalLocation());
+        popup = new JPopupMenu();
+
+        JMenuItem item = new JMenuItem("About RESTClient");
+        item.setActionCommand(IdeaPlugin.METHOD_ABOUT);
+        item.addActionListener(this);
+        popup.add(item);
+
+        item = new JMenuItem("About Plugin");
+        item.setActionCommand(IdeaPlugin.METHOD_ABOUT_PLUGIN);
+        item.addActionListener(this);
+        popup.add(item);
     }
 
     /**
-     * Indicates the popup menu's vertical location.
+     * Invoked when the user clicks on a popup menu item.
      *
-     * @return Popup menu's vertical location
+     * @param event Popup menu click event
      */
-    protected abstract int getVerticalLocation();
+    public void actionPerformed(ActionEvent event)
+    {
+        IdeaPlugin plugin = IdeaPlugin.getInstance(ideaEvent.getData(DataKeys.PROJECT));
+
+        if (event.getActionCommand().equals(IdeaPlugin.METHOD_ABOUT))
+        {
+            plugin.showAboutDialog();
+        }
+        else if (event.getActionCommand().equals(IdeaPlugin.METHOD_ABOUT_PLUGIN))
+        {
+            plugin.showAboutPluginDialog();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected int getVerticalLocation()
+    {
+        return 75;
+    }
 }
