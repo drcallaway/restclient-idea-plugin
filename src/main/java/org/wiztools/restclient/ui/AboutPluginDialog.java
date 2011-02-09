@@ -35,15 +35,28 @@ class AboutPluginDialog extends EscapableDialog
 {
     private static final String PLUGIN_TITLE = "RESTClient IDEA Plugin";
     private static final String PLUGIN_VERSION = "1.0";
+    private static final String AUTHOR = "Dustin R. Callaway";
+    private static final String EMAIL = "drcallaway@gmail.com";
+    private static final String PLUGIN_URL = "http://code.google.com/p/restclient-idea-plugin/";
+    private static final String OPEN_SOURCE_LICENSE = "MIT License";
+    private static final String ICONS = "Courtesty of the Open Icon Library";
     private AboutPluginDialog me;
 
-    public AboutPluginDialog(Frame f)
+    /**
+     * Constructs a new AboutPluginDialog object.
+     *
+     * @param frame Frame
+     */
+    public AboutPluginDialog(Frame frame)
     {
-        super(f, true);
+        super(frame, true);
         me = this;
         init();
     }
 
+    /**
+     * Initializes the dialog box.
+     */
     private void init()
     {
         setTitle("About Plugin");
@@ -65,11 +78,11 @@ class AboutPluginDialog extends EscapableDialog
         JTextPane jtp = new JTextPane();
         jtp.setEditable(false);
         jtp.setContentType("text/html");
-        jtp.setText("<p style='font-family: Arial, sans-serif'><b>Author:</b> Dustin R. Callaway<br><br>" +
-            "<b>Email:</b> drcallaway@gmail.com<br><br>" +
-            "<b>Plugin URL:</b> http://code.google.com/p/restclient-idea-plugin/<br><br>" +
-            "<b>Open Source License:</b> MIT License<br><br>" +
-            "<b>Icons:</b> Courtesty of the Open Icon Library<br><br></p>");
+        jtp.setText("<p style='font-family: Arial, sans-serif'><b>Author:</b> " + AUTHOR + "<br><br>" +
+            "<b>Email:</b> " + EMAIL + "<br><br>" +
+            "<b>Plugin URL:</b> " + PLUGIN_URL + "<br><br>" +
+            "<b>Open Source License:</b> " + OPEN_SOURCE_LICENSE + "<br><br>" +
+            "<b>Icons:</b> " + ICONS + "<br><br></p>");
         jp_center.add(new JScrollPane(jtp));
         jp.add(jp_center, BorderLayout.CENTER);
 
@@ -92,12 +105,20 @@ class AboutPluginDialog extends EscapableDialog
         pack();
     }
 
+    /**
+     * Overrides the EscapableDialogBox's doEscape() method.
+     *
+     * @param event AWTEvent
+     */
     @Override
     public void doEscape(AWTEvent event)
     {
         hideMe();
     }
 
+    /**
+     * Hides the dialog box.
+     */
     public void hideMe()
     {
         me.setVisible(false);
