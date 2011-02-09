@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 /**
  * Handles the file menu action by displaying a popup menu of file choices and processing the user's selection.
  */
-public class FileMenuAction extends AnAction implements ActionListener
+public class FileMenuAction extends BaseMenuAction
 {
     private JPopupMenu popup;
     private AnActionEvent ideaEvent;
@@ -60,18 +60,6 @@ public class FileMenuAction extends AnAction implements ActionListener
         item.setActionCommand(IdeaPlugin.ACTION_SAVE_REQ_RES_ARCHIVE);
         item.addActionListener(this);
         popup.add(item);
-    }
-
-    /**
-     * Invoked when the user clicks on the file menu icon. Displays a popup menu of file choices.
-     *
-     * @param event IDEA action event
-     */
-    public void actionPerformed(AnActionEvent event)
-    {
-        ideaEvent = event;
-        IdeaPlugin restPlugin = IdeaPlugin.getInstance(event.getData(DataKeys.PROJECT));
-        popup.show(restPlugin.getPluginPanel(), 31, 0);
     }
 
     /**

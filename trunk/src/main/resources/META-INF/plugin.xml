@@ -22,12 +22,12 @@
         </group>
 
         <group id="RESTClient.EditMenu" description="Edit Menu">
-            <action id="EditMenuAction" class="com.sourcestream.plugin.idea.restclient.FileMenuAction" text="Edit Menu"
+            <action id="EditMenuAction" class="com.sourcestream.plugin.idea.restclient.EditMenuAction" text="Edit Menu"
                 icon="/icons/edit.png"/>
         </group>
 
         <group id="RESTClient.ToolsMenu" description="Tools Menu">
-            <action id="ToolsMenuAction" class="com.sourcestream.plugin.idea.restclient.FileMenuAction"
+            <action id="ToolsMenuAction" class="com.sourcestream.plugin.idea.restclient.ToolsMenuAction"
                 text="Tools Menu" icon="/icons/tools.png"/>
         </group>
 
