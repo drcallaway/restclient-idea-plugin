@@ -65,11 +65,11 @@ class AboutPluginDialog extends EscapableDialog
         JTextPane jtp = new JTextPane();
         jtp.setEditable(false);
         jtp.setContentType("text/html");
-        jtp.setText("<b>Author:</b> Dustin R. Callaway<br><br>" +
+        jtp.setText("<p style='font-family: Arial, sans-serif'><b>Author:</b> Dustin R. Callaway<br><br>" +
             "<b>Email:</b> drcallaway@gmail.com<br><br>" +
             "<b>Plugin URL:</b> http://code.google.com/p/restclient-idea-plugin/<br><br>" +
             "<b>Open Source License:</b> MIT License<br><br>" +
-            "<b>Icons:</b> Courtesty of the Open Icon Library");
+            "<b>Icons:</b> Courtesty of the Open Icon Library<br><br></p>");
         jp_center.add(new JScrollPane(jtp));
         jp.add(jp_center, BorderLayout.CENTER);
 
