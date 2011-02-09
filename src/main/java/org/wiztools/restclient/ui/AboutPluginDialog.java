@@ -29,7 +29,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * @author schandran
+ * Creates the about plugin dialog.
  */
 class AboutPluginDialog extends EscapableDialog
 {
@@ -40,6 +40,7 @@ class AboutPluginDialog extends EscapableDialog
     private static final String PLUGIN_URL = "http://code.google.com/p/restclient-idea-plugin/";
     private static final String OPEN_SOURCE_LICENSE = "MIT License";
     private static final String ICONS = "Courtesty of the Open Icon Library";
+
     private AboutPluginDialog me;
 
     /**
