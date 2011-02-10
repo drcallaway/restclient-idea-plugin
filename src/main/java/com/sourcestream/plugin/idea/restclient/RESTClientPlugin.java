@@ -45,7 +45,7 @@ import java.awt.*;
 public abstract class RESTClientPlugin implements ProjectComponent
 {
     protected static final String TOOL_WINDOW_ID = "RESTClient";
-    protected static final Icon toolWindowIcon = IconLoader.getIcon("/icons/remote.png");
+    protected static final Icon toolWindowIcon = IconLoader.getIcon("/icons/logo.png");
 
     protected Project project;
     protected JPanel pluginPanel;
