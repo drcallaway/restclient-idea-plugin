@@ -3,8 +3,8 @@
     <name>RESTClient</name>
     <id>RESTClient</id>
     <description>
-        RESTClient is an application used to test RESTful web services. Features include a trace server and support for
-        proxy servers, basic and digest authentication, SSL, test scripts, encoding/decoding passwords, and
+        RESTClient is an application used to test RESTful web services. Features include a trace server as well as
+        support for proxy servers, basic and digest authentication, SSL, test scripts, encoding/decoding passwords, and
         storing/reloading requests and responses.
     </description>
     <version>1.0</version>

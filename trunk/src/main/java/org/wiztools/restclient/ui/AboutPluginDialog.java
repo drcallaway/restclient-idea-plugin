@@ -39,7 +39,8 @@ class AboutPluginDialog extends EscapableDialog
     private static final String EMAIL = "drcallaway@gmail.com";
     private static final String PLUGIN_URL = "http://code.google.com/p/restclient-idea-plugin/";
     private static final String OPEN_SOURCE_LICENSE = "MIT License";
-    private static final String ICONS = "Courtesty of the Open Icon Library";
+    private static final String ICONS = "Courtesty of Nuvola 1.0 (KDE 3.x icon set),<br>" +
+        "Tango Icon Library 0.8.90, Wikimedia Commons";
 
     private AboutPluginDialog me;
 
@@ -83,7 +84,8 @@ class AboutPluginDialog extends EscapableDialog
             "<b>Email:</b> " + EMAIL + "<br><br>" +
             "<b>Plugin URL:</b> " + PLUGIN_URL + "<br><br>" +
             "<b>Open Source License:</b> " + OPEN_SOURCE_LICENSE + "<br><br>" +
-            "<b>Icons:</b> " + ICONS + "<br><br></p>");
+            "<table border='0' style='font-family: Arial, sans-serif' cellspacing='0' cellpadding='0'>" +
+            "<tr valign='top'><td><b>Icons:</b>&nbsp;</td><td>" +  ICONS + "</td></tr></table><br></p>");
         jp_center.add(new JScrollPane(jtp));
         jp.add(jp_center, BorderLayout.CENTER);
 
