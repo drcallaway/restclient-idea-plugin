@@ -34,6 +34,8 @@ import java.awt.event.ActionEvent;
  */
 public class EditMenuAction extends BaseMenuAction
 {
+    private static final int VERTICAL_LOCATION = 25;
+
     /**
      * Constructs a new EditMenuAction object.
      */
@@ -88,6 +90,6 @@ public class EditMenuAction extends BaseMenuAction
     @Override
     protected int getVerticalLocation()
     {
-        return 25;
+        return VERTICAL_LOCATION;
     }
 }
