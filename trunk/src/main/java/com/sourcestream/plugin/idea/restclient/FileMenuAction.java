@@ -34,6 +34,8 @@ import java.awt.event.ActionEvent;
  */
 public class FileMenuAction extends BaseMenuAction
 {
+    private static final int VERTICAL_LOCATION = 0;
+
     /**
      * Constructs a new FileMenuAction object.
      */
@@ -124,6 +126,6 @@ public class FileMenuAction extends BaseMenuAction
     @Override
     protected int getVerticalLocation()
     {
-        return 0;
+        return VERTICAL_LOCATION;
     }
 }

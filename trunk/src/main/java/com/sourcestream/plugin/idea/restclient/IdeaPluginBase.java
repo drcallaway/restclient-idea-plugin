@@ -40,9 +40,10 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Base class for RESTClient IDEA plugin.
+ * Base class for the RESTClient IDEA plugin. This class implements the functions that do not require direct access to
+ * the RESTClient application's RESTMain class.
  */
-public abstract class RESTClientPlugin implements ProjectComponent
+public abstract class IdeaPluginBase implements ProjectComponent
 {
     protected static final String TOOL_WINDOW_ID = "RESTClient";
     protected static final Icon toolWindowIcon = IconLoader.getIcon("/icons/logo.png");
@@ -55,7 +56,7 @@ public abstract class RESTClientPlugin implements ProjectComponent
      *
      * @param project IDEA project
      */
-    public RESTClientPlugin(Project project)
+    public IdeaPluginBase(Project project)
     {
         this.project = project;
     }
@@ -78,7 +79,7 @@ public abstract class RESTClientPlugin implements ProjectComponent
     }
 
     /**
-     * Deletes the plugin.
+     * Performs plugin cleanup tasks.
      */
     public void disposeComponent()
     {
@@ -121,7 +122,7 @@ public abstract class RESTClientPlugin implements ProjectComponent
     }
 
     /**
-     * Creates the plugin UI within its tool window.
+     * Creates the plugin UI within the project's tool window.
      *
      * @return Panel containing plugin UI
      */

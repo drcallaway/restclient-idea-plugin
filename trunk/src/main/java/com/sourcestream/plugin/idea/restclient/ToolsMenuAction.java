@@ -35,7 +35,7 @@ import java.awt.event.ActionEvent;
  */
 public class ToolsMenuAction extends BaseMenuAction
 {
-    private String port = null;
+    private static final int VERTICAL_LOCATION = 50;
 
     /**
      * Constructs a new ToolsMenuAction object.
@@ -51,7 +51,7 @@ public class ToolsMenuAction extends BaseMenuAction
 
         popup.addSeparator();
 
-        port = System.getProperty(TraceServer.SYS_PROPERTY_PORT);
+        String port = System.getProperty(TraceServer.SYS_PROPERTY_PORT);
         if (port == null)
         {
             port = String.valueOf(TraceServer.PORT);
@@ -117,6 +117,6 @@ public class ToolsMenuAction extends BaseMenuAction
     @Override
     protected int getVerticalLocation()
     {
-        return 50;
+        return VERTICAL_LOCATION;
     }
 }

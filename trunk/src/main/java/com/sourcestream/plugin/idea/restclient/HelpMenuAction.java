@@ -34,6 +34,8 @@ import java.awt.event.ActionEvent;
  */
 public class HelpMenuAction extends BaseMenuAction
 {
+    private static final int VERTICAL_LOCATION = 75;
+
     /**
      * Constructs a new ToolsMenuAction object.
      */
@@ -77,6 +79,6 @@ public class HelpMenuAction extends BaseMenuAction
     @Override
     protected int getVerticalLocation()
     {
-        return 75;
+        return VERTICAL_LOCATION;
     }
 }

@@ -25,7 +25,7 @@ package org.wiztools.restclient.ui;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
-import com.sourcestream.plugin.idea.restclient.RESTClientPlugin;
+import com.sourcestream.plugin.idea.restclient.IdeaPluginBase;
 import com.sourcestream.plugin.idea.restclient.ReflectionUtil;
 import org.wiztools.restclient.RequestBean;
 import org.wiztools.restclient.Util;
@@ -37,9 +37,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * IDEA plugin for RESTClient.
+ * IDEA plugin for RESTClient. This class contains all of the methods that require a direct call into RESTMain. This
+ * class resides in the org.wiztools.restclient.ui package since RESTMain is package protected and, therefore, not
+ * accessible from outside this package. All functionality that doesn't require direct access to RESTMain is implemented
+ * by classes in the com.sourcestream.plugin.idea.restclient package.
  */
-public class IdeaPlugin extends RESTClientPlugin
+public class IdeaPlugin extends IdeaPluginBase
 {
     public static final String METHOD_OPEN_REQUEST = "jmi_open_reqAction";
     public static final String METHOD_OPEN_RESPONSE = "jmi_open_resAction";
