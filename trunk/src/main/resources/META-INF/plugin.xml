@@ -10,7 +10,7 @@
     <version>1.0</version>
     <category>Network</category>
     <vendor url="http://code.google.com/p/restclient-idea-plugin/" email="drcallaway@gmail.com" logo="icons/logo.png">Dustin R. Callaway</vendor>
-    <idea-version since-build="4155" until-build=""/>
+    <idea-version since-build="8000" until-build=""/>
     <project-components>
         <component>
             <implementation-class>org.wiztools.restclient.ui.IdeaPlugin</implementation-class>
