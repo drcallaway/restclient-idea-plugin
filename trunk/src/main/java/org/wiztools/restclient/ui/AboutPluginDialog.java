@@ -37,7 +37,7 @@ class AboutPluginDialog extends EscapableDialog
     private static final String PLUGIN_VERSION = "1.0";
     private static final String AUTHOR = "Dustin R. Callaway";
     private static final String EMAIL = "drcallaway@gmail.com";
-    private static final String PLUGIN_URL = "http://code.google.com/p/restclient-idea-plugin/";
+    private static final String PLUGIN_URL = "http://restclient-idea-plugin.googlecode.com";
     private static final String OPEN_SOURCE_LICENSE = "MIT License";
     private static final String ICONS = "Courtesty of Nuvola 1.0 (KDE 3.x icon set),<br>" +
         "Tango Icon Library 0.8.90, Wikimedia Commons";
