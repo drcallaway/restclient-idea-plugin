@@ -37,6 +37,7 @@ class AboutPluginDialog extends EscapableDialog
     private static final String PLUGIN_VERSION = "1.0";
     private static final String AUTHOR = "Dustin R. Callaway";
     private static final String EMAIL = "drcallaway@gmail.com";
+    private static final String AUTHOR_URL = "http://www.sourcestream.com";
     private static final String PLUGIN_URL = "http://restclient-idea-plugin.googlecode.com";
     private static final String OPEN_SOURCE_LICENSE = "MIT License";
     private static final String ICONS = "Courtesty of Nuvola 1.0 (KDE 3.x icon set),<br>" +
@@ -82,7 +83,8 @@ class AboutPluginDialog extends EscapableDialog
         jtp.setContentType("text/html");
         jtp.setText("<p style='font-family: Arial, sans-serif'><b>Author:</b> " + AUTHOR + "<br><br>" +
             "<b>Email:</b> " + EMAIL + "<br><br>" +
-            "<b>Plugin URL:</b> " + PLUGIN_URL + "<br><br>" +
+            "<b>Author Website:</b> " + AUTHOR_URL + "</a><br><br>" +
+            "<b>Plugin Website:</b> " + PLUGIN_URL + "<br><br>" +
             "<b>Open Source License:</b> " + OPEN_SOURCE_LICENSE + "<br><br>" +
             "<table border='0' style='font-family: Arial, sans-serif' cellspacing='0' cellpadding='0'>" +
             "<tr valign='top'><td><b>Icons:</b>&nbsp;</td><td>" +  ICONS + "</td></tr></table><br></p>");
