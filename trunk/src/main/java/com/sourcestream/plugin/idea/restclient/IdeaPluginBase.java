@@ -134,22 +134,22 @@ public abstract class IdeaPluginBase implements ProjectComponent
         Box toolbox = Box.createVerticalBox();
         Component comp = ActionManager.getInstance().createActionToolbar("File Menu",
             (ActionGroup) ActionManager.getInstance().getAction("RESTClient.FileMenu"), true).getComponent();
-        comp.setMaximumSize(new Dimension(25, 25));
+        comp.setMaximumSize(new Dimension(27, 27));
         toolbox.add(comp);
 
         comp = ActionManager.getInstance().createActionToolbar("Edit Menu",
             (ActionGroup) ActionManager.getInstance().getAction("RESTClient.EditMenu"), true).getComponent();
-        comp.setMaximumSize(new Dimension(25, 25));
+        comp.setMaximumSize(new Dimension(27, 27));
         toolbox.add(comp);
 
         comp = ActionManager.getInstance().createActionToolbar("Tools Menu",
             (ActionGroup) ActionManager.getInstance().getAction("RESTClient.ToolsMenu"), true).getComponent();
-        comp.setMaximumSize(new Dimension(25, 25));
+        comp.setMaximumSize(new Dimension(27, 27));
         toolbox.add(comp);
 
         comp = ActionManager.getInstance().createActionToolbar("Help Menu",
             (ActionGroup) ActionManager.getInstance().getAction("RESTClient.HelpMenu"), true).getComponent();
-        comp.setMaximumSize(new Dimension(25, 25));
+        comp.setMaximumSize(new Dimension(27, 27));
         toolbox.add(comp);
 
         JPanel toolbarPanel = new JPanel();
