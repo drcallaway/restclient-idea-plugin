@@ -8,7 +8,7 @@
         request/response tracing, test scripts, and Base64 password encoding/decoding.
         ]]>
     </description>
-    <version>1.0</version>
+    <version>1.1</version>
     <category>Network</category>
     <vendor url="http://www.sourcestream.com" email="drcallaway@gmail.com" logo="icons/logo.png">Dustin R. Callaway</vendor>
     <idea-version since-build="8000" until-build=""/>
