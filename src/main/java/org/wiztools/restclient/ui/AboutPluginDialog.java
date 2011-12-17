@@ -34,7 +34,7 @@ import java.awt.event.ActionListener;
 class AboutPluginDialog extends EscapableDialog
 {
     private static final String PLUGIN_TITLE = "RESTClient IDEA Plugin";
-    private static final String PLUGIN_VERSION = "1.0";
+    private static final String PLUGIN_VERSION = "1.1";
     private static final String AUTHOR = "Dustin R. Callaway";
     private static final String EMAIL = "drcallaway@gmail.com";
     private static final String AUTHOR_URL = "http://www.sourcestream.com";
