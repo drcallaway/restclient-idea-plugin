@@ -23,16 +23,18 @@
  */
 package com.sourcestream.plugin.idea.restclient;
 
-import com.intellij.openapi.actionSystem.DataKeys;
-import org.wiztools.restclient.ui.IdeaPlugin;
+import java.awt.event.ActionEvent;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
+
+import org.wiztools.restclient.ui.IdeaPlugin;
+
+import com.intellij.openapi.actionSystem.DataKeys;
 
 /**
  * Handles the edit menu action by displaying a popup menu of edit choices and processing the user's selection.
  */
-public class EditMenuAction extends BaseMenuAction
+public class EditMenuAction extends com.sourcestream.plugin.idea.restclient.BaseMenuAction
 {
     private static final int VERTICAL_LOCATION = 25;
 

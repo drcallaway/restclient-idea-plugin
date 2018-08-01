@@ -23,6 +23,12 @@
  */
 package com.sourcestream.plugin.idea.restclient;
 
+import java.awt.*;
+
+import javax.swing.*;
+
+import org.jetbrains.annotations.NotNull;
+
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.components.ProjectComponent;
@@ -31,13 +37,9 @@ import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.peer.PeerFactory;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
-import org.jetbrains.annotations.NotNull;
-
-import javax.swing.*;
-import java.awt.*;
+import com.intellij.ui.content.ContentFactoryImpl;
 
 /**
  * Base class for the RESTClient IDEA plugin. This class implements the functions that do not require direct access to
@@ -105,7 +107,7 @@ public abstract class IdeaPluginBase implements ProjectComponent
         ToolWindow toolWindow = toolWindowManager.registerToolWindow(TOOL_WINDOW_ID, false, ToolWindowAnchor.BOTTOM);
 
         pluginPanel = createPluginPanel();
-        ContentFactory contentFactory = PeerFactory.getInstance().getContentFactory();
+        ContentFactory contentFactory = ContentFactoryImpl.SERVICE.getInstance();
         Content content = contentFactory.createContent(pluginPanel, "", false);
 
         toolWindow.getContentManager().addContent(content);
