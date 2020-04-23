@@ -23,17 +23,19 @@
  */
 package com.sourcestream.plugin.idea.restclient;
 
-import com.intellij.openapi.actionSystem.DataKeys;
+import java.awt.event.ActionEvent;
+
+import javax.swing.*;
+
 import org.wiztools.restclient.server.TraceServer;
 import org.wiztools.restclient.ui.IdeaPlugin;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
+import com.intellij.openapi.actionSystem.DataKeys;
 
 /**
  * Handles the tools menu action by displaying a popup menu of edit choices and processing the user's selection.
  */
-public class ToolsMenuAction extends BaseMenuAction
+public class ToolsMenuAction extends com.sourcestream.plugin.idea.restclient.BaseMenuAction
 {
     private static final int VERTICAL_LOCATION = 50;
 
